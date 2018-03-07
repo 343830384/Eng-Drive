@@ -45,7 +45,7 @@
   * htmlText : Eng的html 组件文本
   * callback : function( compileText )
   *            compileText : 编译后的文本
-demo--------------------------------------------------------------
+----------------------------------------------------------------  
 var html='<div id="demo1"><div e-base="base"><p>{{v}}</p></div></div>';
 var eng=require('eng-drive');
     eng.manual(html ,function(compileText){
@@ -61,7 +61,7 @@ var eng=require('eng-drive');
   *  compileData : 编译数据
   *  callback : function( htmlText )
   *             htmlText : 生成的html文本             
-demo--------------------------------------------------------------  
+----------------------------------------------------------------  
 var data={
 	      base:{
 	      	  v:'这仅是个基本范例' 
