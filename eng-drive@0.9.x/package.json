@@ -1,0 +1,29 @@
+{
+  "name": "eng-drive",
+  "version": "0.9.02",
+  "description": "Eng's component rendering \"node\" tool",
+  "main": "index.js",
+  "bin": {
+    "eng": "bin/eng.js"
+  },
+  "dependencies" : {
+    "cheerio":"1.0.0-rc.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/343830384/Eng-Drive.git"
+  },
+  "keywords": [
+    "eng-drive",
+    "eng",
+    "engjs",
+    "eng-nos"
+  ],
+  "author": "ks",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/343830384/Eng-Drive/issues",
+    "email" : "343830384@163.com"
+  },
+  "homepage": "https://github.com/343830384/Eng-Drive#readme"
+}
