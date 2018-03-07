@@ -75,7 +75,17 @@ var compileData={"base":{"v":{"1":[1]},"$_a":["<div><p>","","</p></div>"]},"$_a"
       //div id="demo1"><div><p>这仅是个基本范例</p></div></div>
     });   
 ```  
- 
+#### 方法 :  eng.dataGlueTo(data , compileData, src , widgetName , callback)
+   * 生成完整的html文本到指定的文件夹
+```
+  *  data : 组件数据
+  *  compileData : 编译数据
+  *  src : 输出路径   
+  *  widgetName : 组件文件夹命名
+  *  callback : function(){
+  *              //do some thing 
+  *            }           
+```  
  
  
  
