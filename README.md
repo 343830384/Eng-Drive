@@ -33,11 +33,16 @@
         "path":"widgets_ENG"
   }
 }
-//    eng -init 等价于 require('eng-drive').init();
+// eng -init 命令   等价于 require('eng-drive').init();
    
 ```
- 
- 
+ #### 命令 eng -auto
+   * 自动查找  ./widgets 目录下所有的 组件 html文件编译输出到 ./widgets_eng_compile 目录下
+   * 注意 ./widgets 每个组件因该是单独的文件夹 ,命名为组件的命名, 并且只有一个.html结尾的组件,其它文件会被拷贝也会被输出到 ./widgets_eng_compile 生成相同的目录结构 
+    
+   
+   
+   
  
  
  
