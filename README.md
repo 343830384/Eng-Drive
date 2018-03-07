@@ -44,9 +44,8 @@
 ```
 /*
   * htmlText : Eng的html 组件文本
-
   * callback : function( compileText ){
-  *     compileText : 编译后的文本
+  *          compileText : 编译后的文本
   *}
        
 */
