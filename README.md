@@ -36,9 +36,21 @@
 // eng -init 命令   等价于 require('eng-drive').init();
    
 ```
- #### 命令 eng -auto
+#### 命令 eng -auto
    * 自动查找  ./widgets 目录下所有的 组件 html文件编译输出到 ./widgets_eng_compile 目录下
    * 注意 ./widgets 下的每个组件因该是单独的文件夹 , 命名为组件的命名 , 并且只有一个.html结尾的组件 , 其它文件也会被拷贝输出到 ./widgets_eng_compile 生成相同的目录结构 
+#### 命令 eng.manual(htmlText,callback)
+   * 手动编译 eng 组件
+```
+/*
+  * htmlText : Eng的html 组件文本
+
+  * callback : function( compileText ){
+  *     compileText : 编译后的文本
+  *}
+       
+*/
+```
     
    
    
