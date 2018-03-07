@@ -36,10 +36,10 @@
 // eng -init 命令   等价于 require('eng-drive').init();
    
 ```
-#### 命令: eng -auto
+#### 命令 :  eng -auto
    * 自动查找  ./widgets 目录下所有的 组件 html文件编译输出到 ./widgets_eng_compile 目录下
    * 注意 ./widgets 下的每个组件因该是单独的文件夹 , 命名为组件的命名 , 并且只有一个.html结尾的组件 , 其它文件也会被拷贝输出到 ./widgets_eng_compile 生成相同的目录结构 
-#### 方法: eng.manual( htmlText , callback )
+#### 方法 :  eng.manual( htmlText , callback )
    * 手动编译 eng 组件
 ```
   * htmlText : Eng的html 组件文本
@@ -54,7 +54,7 @@ var eng=require('eng-drive');
 	        
 	   }); 
 ```
-#### 方法: eng.dataGlue(data , compileData , callback)
+#### 方法 :  eng.dataGlue(data , compileData , callback)
    * 生成完整的html文本
 ```
   *  data : 组件数据
@@ -63,10 +63,20 @@ var eng=require('eng-drive');
   *             htmlText : 生成的html文本             
 demo--------------------------------------------------------------
 ```    
-   
-   
-   
- 
+var data={
+	      base:{
+	      	  v:'这仅是个基本范例' 
+	      }
+    };   
+var compileData={"base":{"v":{"1":[1]},"$_a":["<div><p>","","</p></div>"]},"$_a":["<div id=\"demo1\"><!--$#base#$--></div>"]};   
+				
+				eng.dataGlue(data,compileData,function( htmlText ){
+				
+					   console.log(htmlText);
+					   
+					   //div id="demo1"><div><p>这仅是个基本范例</p></div></div>
+				});   
+```  
  
  
  
