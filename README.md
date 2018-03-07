@@ -57,7 +57,7 @@ var eng=require('eng-drive');
 #### 方法 :  eng.dataGlue(data , compileData , callback)
    * 生成完整的html文本
 ```
-  *  data : 组件数据
+  *  data :        组件数据
   *  compileData : 编译数据
   *  callback : function( htmlText )
   *             htmlText : 生成的html文本             
@@ -78,10 +78,10 @@ var compileData={"base":{"v":{"1":[1]},"$_a":["<div><p>","","</p></div>"]},"$_a"
 #### 方法 :  eng.dataGlueTo(data , compileData, src , widgetName , callback)
    * 生成完整的html文本到指定的文件夹
 ```
-  *  data : 组件数据
+  *  data :        组件数据
   *  compileData : 编译数据
-  *  src : 输出路径   
-  *  widgetName : 组件文件夹命名
+  *  src :         输出路径   
+  *  widgetName :  组件文件夹命名
   *  callback : function(){
   *              //do some thing 
   *            }           
