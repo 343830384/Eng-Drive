@@ -21,11 +21,11 @@
  
    * 仅能对 [Eng](https://github.com/343830384/Eng) 的 e-base、e-attr、e-html、e-for 四个组件指令做出预编译和渲染, 涉及 Dom 操作目前不支持 . 并且理论上绝大部分普通页面的编写也仅仅会用到这四个指令,  需要预渲染的是页面生成后 , 用其它js 操作的页面的 ;  Eng 的其它指令/方法更适合用来开发具有交互逻辑的组件  
 
-<br/>
+<br>
 
 #### 安装: npm install -g eng-drive
 
-<br/>
+<br>
 
 #### 命令: eng -init
    * 在当前工作目录生成配置文件 config.json 和  默认 widgets 和 widgets_eng_compile 两个文件夹 (当前版本仅有输出目录配置) 
@@ -38,8 +38,10 @@
 }
 // eng -init 命令   等价于 require('eng-drive').init();
    
-```
-<br/>
+``
+
+<br>
+
 #### 命令 :  eng -auto
    * 自动查找  ./widgets 目录下所有的 组件 html文件编译输出到 ./widgets_eng_compile 目录下
    * 注意 ./widgets 下的每个组件因该是单独的文件夹 , 命名为组件的命名 , 并且只有一个.html结尾的组件 , 其它文件也会被拷贝输出到 ./widgets_eng_compile 生成相同的目录结构 
