@@ -69,12 +69,12 @@ var data={
     };   
 var compileData={"base":{"v":{"1":[1]},"$_a":["<div><p>","","</p></div>"]},"$_a":["<div id=\"demo1\"><!--$#base#$--></div>"]};   
 				
-				eng.dataGlue(data,compileData,function( htmlText ){
+  eng.dataGlue(data,compileData,function( htmlText ){
 				
-					   console.log(htmlText);
+    console.log(htmlText);
 					   
 					   //div id="demo1"><div><p>这仅是个基本范例</p></div></div>
-				});   
+  });   
 ```  
  
  
