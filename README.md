@@ -23,11 +23,11 @@
 
 <br>
 
-#### 安装:  **npm install -g eng-drive**
+#### 安装 :   npm install -g eng-drive 
 
 <br>
 
-#### 命令: eng -init
+#### 命令 :  eng -init
    * 在当前工作目录生成配置文件 config.json 和  默认 widgets 和 widgets_eng_compile 两个文件夹 (当前版本仅有输出目录配置) 
 ```
 {
