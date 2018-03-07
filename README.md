@@ -39,13 +39,12 @@
 #### 命令: eng -auto
    * 自动查找  ./widgets 目录下所有的 组件 html文件编译输出到 ./widgets_eng_compile 目录下
    * 注意 ./widgets 下的每个组件因该是单独的文件夹 , 命名为组件的命名 , 并且只有一个.html结尾的组件 , 其它文件也会被拷贝输出到 ./widgets_eng_compile 生成相同的目录结构 
-#### 方法: eng.manual(htmlText,callback)
+#### 方法: eng.manual( htmlText , callback )
    * 手动编译 eng 组件
 ```
   * htmlText : Eng的html 组件文本
-  * callback : function( compileText ){
-  *          compileText : 编译后的文本
-  *}
+  * callback : function( compileText )
+  *            compileText : 编译后的文本
 demo--------------------------------------------------------------
 var html='<div id="demo1"><div e-base="base"><p>{{v}}</p></div></div>';
 var eng=require('eng-drive');
@@ -53,11 +52,17 @@ var eng=require('eng-drive');
     
 	        console.log(compileText); 
 	        
-	       //{"base":{"v":{"1":[1]},"$_a":["<div><p>","","</p></div>"]},"$_a":["<div id=\"demo1\"><!--$#base#$--></div>"]}
-}) 
-  
+	   }); 
 ```
-    
+#### 方法: eng.dataGlue(data , compileData , callback)
+   * 生成完整的html文本
+```
+  *  data : 组件数据
+  *  compileData : 编译数据
+  *  callback : function( htmlText )
+  *             htmlText : 生成的html文本             
+demo--------------------------------------------------------------
+```    
    
    
    
