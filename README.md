@@ -24,7 +24,8 @@
 
 #### 安装 npm install -g eng-drive
 
-#### 命令 eng -init  生成配置文件(当前版本仅有基础输出目录配置)
+#### 命令 eng -init
+   * 在当前工作目录生成配置文件 config.json 和  默认 widgets 和 widgets_eng_compile 两个文件夹 (当前版本仅有输出目录配置) 
 ```
 {
   "widgets_output":{ //输出目录
