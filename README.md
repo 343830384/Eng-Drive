@@ -61,8 +61,7 @@ var eng=require('eng-drive');
   *  compileData : 编译数据
   *  callback : function( htmlText )
   *             htmlText : 生成的html文本             
-demo--------------------------------------------------------------
-```    
+demo--------------------------------------------------------------  
 var data={
 	      base:{
 	      	  v:'这仅是个基本范例' 
