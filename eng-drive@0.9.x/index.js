@@ -3,6 +3,7 @@ var qe=require('./qe.js').o;
 var cfg=require('./config.js');
 var fs=require('./filePro.js').fs;
 var dataGlue=require('./format.js').dataGlue;
+var minify = require('html-minifier').minify;
 var G=0;
 var getWidgestList=function(path,dest){
 	       qe.as=function(files){
@@ -37,11 +38,7 @@ var fileShunt=function(path,files,dest){
 							      	     };
 							      	     fs.isFile(pth,s+i,dpth,ff);
 						      	    }else{
-						      	    	 console.log(pth)
-						      	    	 console.log(dest)
-						      	    	 console.log(name)
 						      	    	 fs.copyTo(pth,dest+'/'+name); 
-						      	    	  
 						      	    };
 						      	i++;
 						      };
@@ -64,7 +61,7 @@ var compileWrite=function(dest,data,ff){
 	     	  console.log('\x1B[32m%s\x1B[0m','===> '+ff);
 	     	   fs.writeF(dest+'/'+ff+'.eng-compile',j);
 	     };
-	     parser(data,s+G);
+     parser(minify(data,{removeComments: true,collapseWhitespace: true}),s+G);
 };
 
 var autoCompile=function(){
