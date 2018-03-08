@@ -20,7 +20,8 @@
     
 ### 注意事项
  
-   * 仅对 [Eng](https://github.com/343830384/Eng) 的 e-base、e-attr、e-html、e-for 四个组件指令做出预编译和渲染, 涉及 Dom 操作目前不支持 . 并且事实上绝大部分常规页面的编写也仅仅会用到这四个指令 ;    [Eng](https://github.com/343830384/Eng) 的其它指令/方法更适合用来开发具有交互逻辑的组件  
+   * 仅对 [Eng](https://github.com/343830384/Eng) 的 e-base、e-attr、e-html、e-for 四个组件指令做出预编译和渲染, 涉及 Dom 操作目前不支持 . 并且事实上绝大部分常规页面的编写也仅仅会用到这四个指令 ;    
+   * [Eng](https://github.com/343830384/Eng) 的其它指令/方法更适合用来开发具有交互逻辑的组件  
 
 <br>
 
