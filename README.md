@@ -4,7 +4,7 @@
 ## Eng-Drive
 
    * Eng-Drive 寓意为  ([Eng](https://github.com/343830384/Eng)的驱动) , 为[Eng](https://github.com/343830384/Eng)的web端 提供协作支持, 当然其也可以做为独立部分运行, 仅用做服务端的(组件)预渲染服务
-   * Eng-Drive 通过将 [Eng](https://github.com/343830384/Eng)语法 的组件预编译成 .eng-compile 结尾的文件, 在调用生成html组件文本时, 拥有同类工具中最领先的优异性能
+   * Eng-Drive 通过对 [Eng](https://github.com/343830384/Eng)语法 的组件编译,eng-compile 结尾的文件,  在服务端数据预渲染时,  拥有同类工具中最领先的优异性能
    * Eng-Drive 的预编译文件, 可以运行在web端, 完美兼容所有版本浏览器, 通过 [Eng-NOS](https://github.com/343830384/Eng-NOS) 渲染 , 拥有变态到近乎世界第一的性能, 是 [Eng](https://github.com/343830384/Eng) 和其同类工具中佼佼者的完整渲染性能耗时的1/3左右, 纯html文本用时占比 1/10左右
 
 ### 版本说明
