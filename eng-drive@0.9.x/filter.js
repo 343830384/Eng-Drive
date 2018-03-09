@@ -14,6 +14,8 @@ var rpList={
 	   $_txt:'$_a', 
 	   $_ach:'$_b',
 	   $_cs:'$_c',
+	   $_index:'$_d',
+	   $_value:'$_e',
 	   $_NV:1,
 	   $_AT:2
 };

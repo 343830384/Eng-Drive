@@ -60,6 +60,32 @@ var i,l=arr.length,a=['$_NV','$_AT'],b,c,d,e,f,v,arr2=[];
       	   o.$_ach[arr2[1]]=arr2[2];
       };
 };
+var phtml=function(str,s,n){
+	    var a=str.length,b=s.length,c=str.indexOf(s),arr=[],t='';
+	        str=str.replace(s,'');
+	        a=a-b;
+	        while(c<a){
+	        	if(str[c]=='>')arr.push(c);
+	        	if(str[c]=='<'){
+	        		 arr.push(c);
+	        		 break;
+	        	};
+	        	c++;
+	        };
+	        c=0,s=0
+	        while(c<a){
+	        	 if(!s&&c<=arr[s]){
+	        	 	 t+=str[c];
+	        	 	 c==arr[s]?(t+='{{'+n,s=1):null
+	        	 };
+	        	 if(c>=arr[s]){
+	        	 	c==arr[s]?(t+='}}',s=1):null
+	        	 	t+=str[c];
+	        	 };
+	        	c++
+	        }
+	     return t
+};
 var Jparse3=function(txt,atr,o,k){ 
 	  var d1,d2,d3,a1=0,a2,a3,i,b,d,e,v1,v2,v3,v4,vv,arr,arr2,k1,g,cArr,o1,o2,c1,c2,tv,v5;
 	     d1=txt.length;
@@ -86,9 +112,7 @@ var Jparse3=function(txt,atr,o,k){
 																	    	  	  	  		 v4=txt[a1].replace(v2[i],v3[1]);
 																	    	  	  	  	};
 																	    	  	  	  	if(g=='$_HT'){
-																	    	  	  	  		 v3='>{{'+atr[a2]+'}}<';
-																	    	  	  	  		 v4=txt[a1].replace(v2[i],'');
-																	    	  	  	  		 v4=v4.replace('><',v3);
+                                   v4=phtml(txt[a1],v2[i],atr[a2])
 																	    	  	  	  		 g='$_NV';
 																    	  	  	  	};
 																                v4=v4.split(regALL[1]);
@@ -296,95 +320,116 @@ var attrBuild=function(d){
 	     return [d,str];
 };
 //~
-var mergeData=function(v,arr2,cs,n){
-   	    var atr=arr2[1],k,c,c1,L=arr2.length,flag,y;
-   	        switch(L){
+var mergeData=function(v,a,b,n){
+   	    var d=a[1],e,c,f,g=a.length,h,y;
+   	        switch(g){
    	        	case 2:
-   	        	 flag=1,c=v;
+   	        	 h=1,c=v;
    	        	break;
    	        	case 4:
-   	        	 v?flag=1:null;
-   	        	 c=arr2[2],c1=arr2[3];
+   	        	 v?h=1:0;
+   	        	 c=a[2],f=a[3];
    	        	break;
    	        	case 6:
-   	        	  atr=arr2[2];
-   	        	  k=arr2[1];
-   	        	  k==0?(v==arr2[3]?flag=1:null):null;
-   	        	  k==1?(v>=arr2[3]?flag=1:null):null;
-   	        	  k==2?(v<=arr2[3]?flag=1:null):null;
-   	        	  k==3?(v>arr2[3]?flag=1:null):null;
-   	        	  k==4?(v<arr2[3]?flag=1:null):null;
-   	        	  c=arr2[4],c1=arr2[5];
+   	        	  d=a[2],
+   	        	  e=a[1],
+   	        	  e==0?(v==a[3]?h=1:0):0,
+   	        	  e==1?(v>=a[3]?h=1:0):0,
+   	        	  e==2?(v<=a[3]?h=1:0):0,
+   	        	  e==3?(v>a[3]?h=1:0):0,
+   	        	  e==4?(v<a[3]?h=1:0):0,
+   	        	  c=a[4],f=a[5];
    	        	break;
    	        	default:return;
    	        };
-   	         atr?atr=atr.toLowerCase():null;
-   	         if(atr=='class')y=' ',cs=cs[0][n];
-   	         if(atr=='style')y=';',cs=cs[1][n];
-   	       if(L>2&&y){	
-   	       	  v=cs;
-              v?(v=v.replace(y+c1,'').replace(y+c,'').trim()):null;
-   	       	  v?(v=v+y+(flag?c:c1)):(v=y+(flag?c:c1));
-                return atr+'=\''+v+'\'';
+   	         d?d=d.toLowerCase():0;
+   	         if(d=='class')y=' ',b=b[0][n];
+   	         if(d=='style')y=';',b=b[1][n];
+   	       if(g>2&&y){	
+   	       	  v=b,
+              v?(v=v.replace(y+f,'').replace(y+c,'').trim()):0,
+   	       	  v?(v=v+y+(h?c:f)):(v=y+(h?c:f));
+                return d+'=\''+v+'\''
    	       }else{
-                return atr+'=\''+(flag?c:c1)+'\'';
-   	       };
-};	
+                return d+'=\''+(h?c:f)+'\''
+   	       }
+}
 var nah=[2,1];
-var hy=function(o,j,f){
-	    var k ,v ,n,ach,txt,i,v2,v3,l,wid=[],wAche=[],arChe,s='<!--$#',e='#$-->',cs;
+var addtxt=function(o,t,s,b,c,a){
+	    var i=1,v,e,n,k;
+	    if(a)b=t.$_b,c=t.$_c,t=t.$_a;
+	     while(i<3){
+	     	  v=o[i];
+	     	  if(v){
+	     	    e=v.length;
+						     	   while(e--){
+						     	   	  n=v[e];
+						     	   	  if(i==1){
+						     	   	   t[n]=s
+						     	   	  }else{
+						     	   	  	 k=b[n],
+						     	   	  	 t[n]=mergeData(s,k[0],c,k[1])
+						     	   	  }
+						     	   }
+	     	  }
+	     	 i++ 
+	     }
+};
+var mmp={'1':1,'2':1,'3':1};
+var hy=function(o,j,f,x){
+	    var k ,v ,n,y,z,i,l,m=[],p=[],q,s='<!--$#',e='#$-->',r,t=1;
 	       
-	        txt=j.$_a; ach=j.$_b,cs=j.$_c;
-	      if(f&&!txt){
+	        z=j.$_a,y=j.$_b,r=j.$_c;
+	      if(f&&!z){
 	      	   for(k in o){
-	      	   	 v=o[k];
+	      	   	 v=o[k],
 	      	   	 n=isJsonOrArray(v);
-	      	   	 if(n==5){
-	      	   	 	 return hy(v,j[k]);
-	      	   	 };
+	      	   	 if(n==5)return hy(v,j[k]);
+	      	   	 
 	      	   }
 	      }else{
-						       for(k in o){
-						       	    v=o[k];
-						       	    	  n=isJsonOrArray(v);
-									       	    if(n==5){  
-									       	    	 wid.push(s+k+e);
-									       	    	 wAche.push( hy(v,j[k]));
-									       	    }else if(n==4){
-									       	    	 wid.push(s+k+e);
-					                   l=v.length,i=0,arChe=[];
-					                   while(i<l){
-					                   	 arChe.push(hy(v[i],j[k]) );
-					                   	 i++
-					                   };
-									       	    	 wAche.push(arChe.join(''));
-									       	    }else{ 
-									       	    	   i=2;
-									       	    	   v3=j[k];
-									       	    	   while(i--){
-											       	    	   	  v2=v3[nah[i]];
-											       	    	   	  if(!v2)continue;
-											       	    	   	  l=v2.length;
-													       	    	   	   while(l--){
-													       	    	   	   	 n=v2[l];
-													       	    	   	   	 if(i){
-													       	    	   	   	   txt[n]=v;
-													       	    	   	   	 }else{
-													       	    	   	   	    k=ach[n];
-													       	    	   	   	   txt[n]=mergeData(v,k[0],cs,k[1])
-													       	    	   	   	 };
-													       	    	   	   };
-									       	    	   };	  
-									       	   };
-						       };
+	      	  if(j.$_d)addtxt(j.$_d,z,x,y,r);
+             if(n==5&&j.$_d)addtxt(j.$_d,z,x,y,r);
+										      for(k in o){
+										       	    v=o[k];
+										       	    	  n=isJsonOrArray(v);
+													       	    if(n==5){  
+													       	    	 m.push(s+k+e),
+													       	    	 p.push( hy(v,j[k],0,x))
+													       	    }else if(n==4){
+													       	    	  m.push(s+k+e),
+									                   l=v.length,i=0,q=[];
+									                   
+										                   while(i<l){
+												                   	 if(t){
+												                   	 	n=isJsonOrArray(v[i]);
+												                   	 	if(mmp[n])t=0;
+												                   	 }
+												                   	 if(t){
+												                   	 	  q.push(hy(v[i],j[k],0,i))
+												                   	 }else{
+												                   	 		if(j[k].$_d)addtxt(j[k].$_d,j[k],i,y,r,1);
+												                   	 		if(j[k].$_e)addtxt(j[k].$_e,j[k],v[i],y,r,1);
+												                   	 		 q.push(j[k].$_a.join(''))
+												                   	 	}
+												                   	 i++
+										                   }
+									                   t=1,
+													       	    	 p.push(q.join(''))
+													       	    }else{
+													       	    	
+				                       if(j[k])addtxt(j[k],z,v,y,r)
+													       	   };
+										       };    
+						  
 	      }; 
-	       txt=txt.join('');
-	       i=wid.length;
+	       z=z.join(''),
+	       i=m.length;
 	       while(i--){
-	       	 txt=txt.replace(wid[i],wAche[i]);
-	       };
-	       return txt;
-};
+	       	 z=z.replace(m[i],p[i])
+	       }
+	       return z
+}
 //###########################################################
 var delTxy=function(o){
 	  var k ,v,n;
@@ -441,6 +486,7 @@ var clearDY=function(o){
 };
 
 var format=function(hJson,sign){
+	debugger;
 		   delTxy(hJson);
 		   Jparse(hJson);
 	    Jparse2Pre(hJson);

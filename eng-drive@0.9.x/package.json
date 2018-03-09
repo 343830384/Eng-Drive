@@ -1,13 +1,14 @@
 {
   "name": "eng-drive",
-  "version": "0.9.21",
+  "version": "0.9.23",
   "description": "Eng's component rendering \"node\" tool",
   "main": "index.js",
   "bin": {
     "eng": "bin/eng.js"
   },
   "dependencies" : {
-    "cheerio":"1.0.0-rc.2"
+    "cheerio":"1.0.0-rc.2",
+    "html-minifier":"*"
   },
   "repository": {
     "type": "git",
